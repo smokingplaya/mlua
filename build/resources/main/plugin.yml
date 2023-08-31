@@ -1,4 +1,0 @@
-name: MLua
-version: '1.0'
-main: org.smokingplaya.mlua.MLua
-api-version: '1.16'

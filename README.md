@@ -1,6 +1,6 @@
 # MLua
 
-A plugin that adds lua support to Spigot.
+A plugin that adds lua scripts support to Spigot.
 
 
 ### Build

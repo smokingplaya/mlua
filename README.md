@@ -10,6 +10,6 @@ A plugin that adds lua scripts support to Spigot.
 4. 
 
 ### Build
-```
+```bash
 gradle shadowJar
 ```

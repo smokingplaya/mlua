@@ -1,6 +1,8 @@
 # MLua
 ###### Powered by luaj
 
+![alt](https://raw.githubusercontent.com/smokingplaya/mlua/main/hat.png)
+
 A plugin that adds lua scripts support to Spigot.
 
 ### How to create yourown script

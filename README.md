@@ -5,6 +5,13 @@
 
 A plugin that adds lua scripts support to Spigot.
 
+## Example Script
+```lua
+hook.insert("PlayerMoveEvent", function(event)
+  print("Player => ", event:getPlayer())
+end)
+```
+
 ## How to create yourown script
 1. Install plugin to your server
 2. Open plugins/MLua/scripts

@@ -21,5 +21,7 @@ end)
 
 ## Build
 ```bash
+git clone https://github.com/smokingplaya/mlua
+cd mlua
 gradle shadowJar
 ```

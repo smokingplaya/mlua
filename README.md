@@ -12,7 +12,7 @@ hook.insert("PlayerMoveEvent", function(event)
 end)
 ```
 
-## How to create yourown script
+## How to create your own script
 1. Install plugin to your server
 2. Open plugins/MLua/scripts
 3. Create file *.lua (where * is name of script)

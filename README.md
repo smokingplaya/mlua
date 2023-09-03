@@ -19,6 +19,11 @@ end)
 4. Type your code
 5. Start/reload server
 
+## Libs
+There is 2 default libries:
+* [hook.lua](https://github.com/smokingplaya/mlua/blob/main/src/main/resources/hook.lua)
+* [util.lua](https://github.com/smokingplaya/mlua/blob/main/src/main/resources/util.lua)
+
 ## Build
 ```bash
 git clone https://github.com/smokingplaya/mlua

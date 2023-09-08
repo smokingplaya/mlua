@@ -7,8 +7,73 @@ import org.bukkit.event.hanging.HangingBreakByEntityEvent;
 import org.bukkit.event.hanging.HangingBreakEvent;
 import org.bukkit.event.hanging.HangingEvent;
 import org.bukkit.event.hanging.HangingPlaceEvent;
+import org.bukkit.event.inventory.BrewEvent;
+import org.bukkit.event.inventory.BrewingStandFuelEvent;
+import org.bukkit.event.inventory.CraftItemEvent;
+import org.bukkit.event.inventory.FurnaceBurnEvent;
+import org.bukkit.event.inventory.FurnaceExtractEvent;
+import org.bukkit.event.inventory.FurnaceSmeltEvent;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryCloseEvent;
+import org.bukkit.event.inventory.InventoryCreativeEvent;
+import org.bukkit.event.inventory.InventoryDragEvent;
+import org.bukkit.event.inventory.InventoryEvent;
+import org.bukkit.event.inventory.InventoryInteractEvent;
+import org.bukkit.event.inventory.InventoryMoveItemEvent;
+import org.bukkit.event.inventory.InventoryOpenEvent;
+import org.bukkit.event.inventory.InventoryPickupItemEvent;
+import org.bukkit.event.inventory.PrepareAnvilEvent;
+import org.bukkit.event.inventory.PrepareItemCraftEvent;
+import org.bukkit.event.inventory.PrepareSmithingEvent;
+import org.bukkit.event.inventory.SmithItemEvent;
+import org.bukkit.event.inventory.TradeSelectEvent;
 import org.bukkit.event.player.*;
-
+import org.bukkit.event.raid.RaidEvent;
+import org.bukkit.event.raid.RaidFinishEvent;
+import org.bukkit.event.raid.RaidSpawnWaveEvent;
+import org.bukkit.event.raid.RaidStopEvent;
+import org.bukkit.event.raid.RaidTriggerEvent;
+import org.bukkit.event.server.BroadcastMessageEvent;
+import org.bukkit.event.server.MapInitializeEvent;
+import org.bukkit.event.server.PluginDisableEvent;
+import org.bukkit.event.server.PluginEnableEvent;
+import org.bukkit.event.server.PluginEvent;
+import org.bukkit.event.server.RemoteServerCommandEvent;
+import org.bukkit.event.server.ServerCommandEvent;
+import org.bukkit.event.server.ServerEvent;
+import org.bukkit.event.server.ServerListPingEvent;
+import org.bukkit.event.server.ServerLoadEvent;
+import org.bukkit.event.server.ServiceEvent;
+import org.bukkit.event.server.ServiceRegisterEvent;
+import org.bukkit.event.server.ServiceUnregisterEvent;
+import org.bukkit.event.server.TabCompleteEvent;
+import org.bukkit.event.vehicle.VehicleBlockCollisionEvent;
+import org.bukkit.event.vehicle.VehicleCollisionEvent;
+import org.bukkit.event.vehicle.VehicleCreateEvent;
+import org.bukkit.event.vehicle.VehicleDamageEvent;
+import org.bukkit.event.vehicle.VehicleDestroyEvent;
+import org.bukkit.event.vehicle.VehicleEnterEvent;
+import org.bukkit.event.vehicle.VehicleEntityCollisionEvent;
+import org.bukkit.event.vehicle.VehicleEvent;
+import org.bukkit.event.vehicle.VehicleExitEvent;
+import org.bukkit.event.vehicle.VehicleMoveEvent;
+import org.bukkit.event.vehicle.VehicleUpdateEvent;
+import org.bukkit.event.weather.LightningStrikeEvent;
+import org.bukkit.event.weather.ThunderChangeEvent;
+import org.bukkit.event.weather.WeatherChangeEvent;
+import org.bukkit.event.weather.WeatherEvent;
+import org.bukkit.event.world.ChunkLoadEvent;
+import org.bukkit.event.world.ChunkPopulateEvent;
+import org.bukkit.event.world.ChunkUnloadEvent;
+import org.bukkit.event.world.LootGenerateEvent;
+import org.bukkit.event.world.PortalCreateEvent;
+import org.bukkit.event.world.SpawnChangeEvent;
+import org.bukkit.event.world.StructureGrowEvent;
+import org.bukkit.event.world.TimeSkipEvent;
+import org.bukkit.event.world.WorldInitEvent;
+import org.bukkit.event.world.WorldLoadEvent;
+import org.bukkit.event.world.WorldSaveEvent;
+import org.bukkit.event.world.WorldUnloadEvent;
 import org.bukkit.event.Event;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -346,4 +411,137 @@ public class MLuaListener implements Listener {
   public void onHangingBreak (HangingBreakEvent e) {eventHander(e);}
   @EventHandler
   public void onHangingPlace (HangingPlaceEvent e) {eventHander(e);}
+
+  // inventory
+
+  @EventHandler
+  public void onBrew (BrewEvent e) {eventHander(e);}
+  @EventHandler
+  public void onBrewingStandFuel (BrewingStandFuelEvent e) {eventHander(e);}
+  @EventHandler
+  public void onCraftItem (CraftItemEvent e) {eventHander(e);}
+  @EventHandler
+  public void onFurnaceBurn (FurnaceBurnEvent e) {eventHander(e);}
+  @EventHandler
+  public void onFurnaceExtract (FurnaceExtractEvent e) {eventHander(e);}
+  @EventHandler
+  public void onFurnaceSmelt (FurnaceSmeltEvent e) {eventHander(e);}
+  @EventHandler
+  public void onInventoryClick (InventoryClickEvent e) {eventHander(e);}
+  @EventHandler
+  public void onInventoryClose (InventoryCloseEvent e) {eventHander(e);}
+  @EventHandler
+  public void onInventoryCreative (InventoryCreativeEvent e) {eventHander(e);}
+  @EventHandler
+  public void onInventoryDrag (InventoryDragEvent e) {eventHander(e);}
+  @EventHandler
+  public void onInventory (InventoryEvent e) {eventHander(e);}
+  @EventHandler
+  public void onInventoryInteract (InventoryInteractEvent e) {eventHander(e);}
+  @EventHandler
+  public void onInventoryMoveItem (InventoryMoveItemEvent e) {eventHander(e);}
+  @EventHandler
+  public void onInventoryOpen (InventoryOpenEvent e) {eventHander(e);}
+  @EventHandler
+  public void onInventoryPickupItem (InventoryPickupItemEvent e) {eventHander(e);}
+  @EventHandler
+  public void onPrepareAnvil (PrepareAnvilEvent e) {eventHander(e);}
+  @EventHandler
+  public void onPrepareItemCraft (PrepareItemCraftEvent e) {eventHander(e);}
+  @EventHandler
+  public void onPrepareSmithing (PrepareSmithingEvent e) {eventHander(e);}
+  @EventHandler
+  public void onSmithItem (SmithItemEvent e) {eventHander(e);}
+  @EventHandler
+  public void onTradeSelect (TradeSelectEvent e) {eventHander(e);}
+
+  // raid
+
+  @EventHandler
+  public void onRaidFinish (RaidFinishEvent e) {eventHander(e);}
+  @EventHandler
+  public void onRaidSpawnWave (RaidSpawnWaveEvent e) {eventHander(e);}
+  @EventHandler
+  public void onRaidStop (RaidStopEvent e) {eventHander(e);}
+  @EventHandler
+  public void onRaidTrigger (RaidTriggerEvent e) {eventHander(e);}
+
+  // server
+
+  @EventHandler
+  public void onBroadcastMessage (BroadcastMessageEvent e) {eventHander(e);}
+  @EventHandler
+  public void onMapInitialize (MapInitializeEvent e) {eventHander(e);}
+  @EventHandler
+  public void onPluginDisable (PluginDisableEvent e) {eventHander(e);}
+  @EventHandler
+  public void onPluginEnable (PluginEnableEvent e) {eventHander(e);}
+  @EventHandler
+  public void onRemoteServerCommand (RemoteServerCommandEvent e) {eventHander(e);}
+  @EventHandler
+  public void onServerCommand (ServerCommandEvent e) {eventHander(e);}
+  @EventHandler
+  public void onServerListPing (ServerListPingEvent e) {eventHander(e);}
+  @EventHandler
+  public void onServerLoad (ServerLoadEvent e) {eventHander(e);}
+  @EventHandler
+  public void onServiceRegister (ServiceRegisterEvent e) {eventHander(e);}
+  @EventHandler
+  public void onServiceUnregister (ServiceUnregisterEvent e) {eventHander(e);}
+  @EventHandler
+  public void onTabComplete (TabCompleteEvent e) {eventHander(e);}
+
+  // vehicle
+  @EventHandler
+  public void onVehicleCreate (VehicleCreateEvent e) {eventHander(e);}
+  @EventHandler
+  public void onVehicleDamage (VehicleDamageEvent e) {eventHander(e);}
+  @EventHandler
+  public void onVehicleDestroy (VehicleDestroyEvent e) {eventHander(e);}
+  @EventHandler
+  public void onVehicleEnter (VehicleEnterEvent e) {eventHander(e);}
+  @EventHandler
+  public void onVehicleEntityCollision (VehicleEntityCollisionEvent e) {eventHander(e);}
+  @EventHandler
+  public void onVehicleExit (VehicleExitEvent e) {eventHander(e);}
+  @EventHandler
+  public void onVehicleMove (VehicleMoveEvent e) {eventHander(e);}
+  @EventHandler
+  public void onVehicleUpdate (VehicleUpdateEvent e) {eventHander(e);}
+
+  // weather
+
+  @EventHandler
+  public void onLightningStrike (LightningStrikeEvent e) {eventHander(e);}
+  @EventHandler
+  public void onThunderChange (ThunderChangeEvent e) {eventHander(e);}
+  @EventHandler
+  public void onWeatherChange (WeatherChangeEvent e) {eventHander(e);}
+
+  // world
+
+  @EventHandler
+  public void onChunkLoad (ChunkLoadEvent e) {eventHander(e);}
+  @EventHandler
+  public void onChunkPopulate (ChunkPopulateEvent e) {eventHander(e);}
+  @EventHandler
+  public void onChunkUnload (ChunkUnloadEvent e) {eventHander(e);}
+  @EventHandler
+  public void onLootGenerate (LootGenerateEvent e) {eventHander(e);}
+  @EventHandler
+  public void onPortalCreate (PortalCreateEvent e) {eventHander(e);}
+  @EventHandler
+  public void onSpawnChange (SpawnChangeEvent e) {eventHander(e);}
+  @EventHandler
+  public void onStructureGrow (StructureGrowEvent e) {eventHander(e);}
+  @EventHandler
+  public void onTimeSkip (TimeSkipEvent e) {eventHander(e);}
+  @EventHandler
+  public void onWorldInit (WorldInitEvent e) {eventHander(e);}
+  @EventHandler
+  public void onWorldLoad (WorldLoadEvent e) {eventHander(e);}
+  @EventHandler
+  public void onWorldSave (WorldSaveEvent e) {eventHander(e);}
+  @EventHandler
+  public void onWorldUnload (WorldUnloadEvent e) {eventHander(e);}
 }

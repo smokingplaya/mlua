@@ -25,8 +25,19 @@ There is 2 default libries:
 * [util.lua](https://github.com/smokingplaya/mlua/blob/main/src/main/resources/util.lua)
 
 ## Build
+*build anyway requires [gradle tool](https://gradle.org/) on your computer
+
+Default method:
 ```bash
 git clone https://github.com/smokingplaya/mlua
 cd mlua
 gradle shadowJar
+```
+
+By python script (for the script to work properly, you need to go into it and change lines 3 and 4 to suit your needs):
+
+```bash
+git clone https://github.com/smokingplaya/mlua
+cd mlua
+python build.py
 ```

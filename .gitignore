@@ -1,8 +1,6 @@
-settings.gradle
 build
-bin
-gradle
 .gradle
+bin
 *.xml
 .idea
 *.bat

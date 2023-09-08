@@ -2,76 +2,11 @@ package org.smokingplaya.mlua;
 
 import org.bukkit.event.block.*;
 import org.bukkit.event.enchantment.*;
-import org.bukkit.event.entity.AreaEffectCloudApplyEvent;
-import org.bukkit.event.entity.ArrowBodyCountChangeEvent;
-import org.bukkit.event.entity.BatToggleSleepEvent;
-import org.bukkit.event.entity.CreatureSpawnEvent;
-import org.bukkit.event.entity.CreeperPowerEvent;
-import org.bukkit.event.entity.EnderDragonChangePhaseEvent;
-import org.bukkit.event.entity.EntityAirChangeEvent;
-import org.bukkit.event.entity.EntityBreakDoorEvent;
-import org.bukkit.event.entity.EntityBreedEvent;
-import org.bukkit.event.entity.EntityChangeBlockEvent;
-import org.bukkit.event.entity.EntityCombustByBlockEvent;
-import org.bukkit.event.entity.EntityCombustByEntityEvent;
-import org.bukkit.event.entity.EntityCombustEvent;
-import org.bukkit.event.entity.EntityCreatePortalEvent;
-import org.bukkit.event.entity.EntityDamageByBlockEvent;
-import org.bukkit.event.entity.EntityDamageByEntityEvent;
-import org.bukkit.event.entity.EntityDamageEvent;
-import org.bukkit.event.entity.EntityDeathEvent;
-import org.bukkit.event.entity.EntityDropItemEvent;
-import org.bukkit.event.entity.EntityEnterBlockEvent;
-import org.bukkit.event.entity.EntityEnterLoveModeEvent;
-import org.bukkit.event.entity.EntityEvent;
-import org.bukkit.event.entity.EntityExhaustionEvent;
-import org.bukkit.event.entity.EntityExplodeEvent;
-import org.bukkit.event.entity.EntityInteractEvent;
-import org.bukkit.event.entity.EntityPickupItemEvent;
-import org.bukkit.event.entity.EntityPlaceEvent;
-import org.bukkit.event.entity.EntityPortalEnterEvent;
-import org.bukkit.event.entity.EntityPortalEvent;
-import org.bukkit.event.entity.EntityPortalExitEvent;
-import org.bukkit.event.entity.EntityPoseChangeEvent;
-import org.bukkit.event.entity.EntityPotionEffectEvent;
-import org.bukkit.event.entity.EntityRegainHealthEvent;
-import org.bukkit.event.entity.EntityResurrectEvent;
-import org.bukkit.event.entity.EntityShootBowEvent;
-import org.bukkit.event.entity.EntitySpawnEvent;
-import org.bukkit.event.entity.EntitySpellCastEvent;
-import org.bukkit.event.entity.EntityTameEvent;
-import org.bukkit.event.entity.EntityTargetEvent;
-import org.bukkit.event.entity.EntityTargetLivingEntityEvent;
-import org.bukkit.event.entity.EntityTeleportEvent;
-import org.bukkit.event.entity.EntityToggleGlideEvent;
-import org.bukkit.event.entity.EntityToggleSwimEvent;
-import org.bukkit.event.entity.EntityTransformEvent;
-import org.bukkit.event.entity.EntityUnleashEvent;
-import org.bukkit.event.entity.ExpBottleEvent;
-import org.bukkit.event.entity.ExplosionPrimeEvent;
-import org.bukkit.event.entity.FireworkExplodeEvent;
-import org.bukkit.event.entity.FoodLevelChangeEvent;
-import org.bukkit.event.entity.HorseJumpEvent;
-import org.bukkit.event.entity.ItemDespawnEvent;
-import org.bukkit.event.entity.ItemMergeEvent;
-import org.bukkit.event.entity.ItemSpawnEvent;
-import org.bukkit.event.entity.LingeringPotionSplashEvent;
-import org.bukkit.event.entity.PigZapEvent;
-import org.bukkit.event.entity.PigZombieAngerEvent;
-import org.bukkit.event.entity.PiglinBarterEvent;
-import org.bukkit.event.entity.PlayerDeathEvent;
-import org.bukkit.event.entity.PlayerLeashEntityEvent;
-import org.bukkit.event.entity.PotionSplashEvent;
-import org.bukkit.event.entity.ProjectileHitEvent;
-import org.bukkit.event.entity.ProjectileLaunchEvent;
-import org.bukkit.event.entity.SheepDyeWoolEvent;
-import org.bukkit.event.entity.SheepRegrowWoolEvent;
-import org.bukkit.event.entity.SlimeSplitEvent;
-import org.bukkit.event.entity.SpawnerSpawnEvent;
-import org.bukkit.event.entity.StriderTemperatureChangeEvent;
-import org.bukkit.event.entity.VillagerAcquireTradeEvent;
-import org.bukkit.event.entity.VillagerCareerChangeEvent;
-import org.bukkit.event.entity.VillagerReplenishTradeEvent;
+import org.bukkit.event.entity.*;
+import org.bukkit.event.hanging.HangingBreakByEntityEvent;
+import org.bukkit.event.hanging.HangingBreakEvent;
+import org.bukkit.event.hanging.HangingEvent;
+import org.bukkit.event.hanging.HangingPlaceEvent;
 import org.bukkit.event.player.*;
 
 import org.bukkit.event.Event;
@@ -81,12 +16,9 @@ import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.lib.jse.CoerceJavaToLua;
 
 public class MLuaListener implements Listener {
-  private LuaValue hook_call;
 
-  public MLuaListener(LuaValue hookCallFunc) {
-    hook_call = hookCallFunc;
-  }
-  
+  private LuaValue hook_call;
+  public MLuaListener(LuaValue hookCallFunc) { hook_call = hookCallFunc; }
   public void eventHander(Event e) {hook_call.call(LuaValue.valueOf(e.getEventName()), CoerceJavaToLua.coerce(e));}
 
   // player
@@ -304,9 +236,6 @@ public class MLuaListener implements Listener {
   public void onEntityDamageByBlock (EntityDamageByBlockEvent e) {eventHander(e);}
   @EventHandler
   public void onEntityDamageByEntity (EntityDamageByEntityEvent e) {eventHander(e);}
-  //
-  @EventHandler
-  public void onEntityDamage (EntityDamageEvent e) {eventHander(e);}
   @EventHandler
   public void onEntityDeath (EntityDeathEvent e) {eventHander(e);}
   @EventHandler
@@ -314,15 +243,9 @@ public class MLuaListener implements Listener {
   @EventHandler
   public void onEntityEnterBlock (EntityEnterBlockEvent e) {eventHander(e);}
   @EventHandler
-  public void onEntityEnterLoveMode (EntityEnterLoveModeEvent e) {eventHander(e);}
-  //
-  @EventHandler
-  public void onEntity (EntityEvent e) {eventHander(e);}
-  @EventHandler
   public void onEntityExplode (EntityExplodeEvent e) {eventHander(e);}
   @EventHandler
   public void onEntityInteract (EntityInteractEvent e) {eventHander(e);}
-  //
   @EventHandler
   public void onEntityPickupItem (EntityPickupItemEvent e) {eventHander(e);}
   @EventHandler
@@ -414,4 +337,13 @@ public class MLuaListener implements Listener {
   public void onVillagerCareerChange (VillagerCareerChangeEvent e) {eventHander(e);}
   @EventHandler
   public void onVillagerReplenishTrade (VillagerReplenishTradeEvent e) {eventHander(e);}
+
+  // hanging
+
+  @EventHandler
+  public void onHangingBreakByEntity (HangingBreakByEntityEvent e) {eventHander(e);}
+  @EventHandler
+  public void onHangingBreak (HangingBreakEvent e) {eventHander(e);}
+  @EventHandler
+  public void onHangingPlace (HangingPlaceEvent e) {eventHander(e);}
 }

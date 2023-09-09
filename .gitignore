@@ -4,4 +4,4 @@ bin
 *.xml
 .idea
 *.bat
-build.py
+*.py

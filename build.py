@@ -17,7 +17,7 @@ cmd_processes = subprocess.run(['tasklist', '/fi', 'imagename eq cmd.exe'], stdo
 if 'cmd.exe' in cmd_processes.stdout:
     subprocess.run(['taskkill', '/f', '/im', 'cmd.exe'])
 
-file_name = "MLua-1.2-all.jar"
+file_name = "MLua-1.3-all.jar"
 
 file_to_check = server_folder + "/plugins/" + file_name
 if os.path.exists(file_to_check):

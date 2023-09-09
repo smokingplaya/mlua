@@ -6,6 +6,8 @@ for _, type_ in pairs(types) do
   end
 end
 
+function add(name, data) _G[name] = data end
+
 function PrintTable(t, i) -- todo tabulation (i)
   local i = i or 0
   for k, v in pairs(t) do

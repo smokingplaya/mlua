@@ -12,6 +12,9 @@ hook.insert("PlayerMoveEvent", function(event)
 end)
 ```
 
+# Download
+You can download .jar file [here](https://github.com/smokingplaya/mlua/releases/tag/1.3)
+
 ## How to create your own script
 1. Install plugin to your server
 2. Open plugins/MLua/scripts

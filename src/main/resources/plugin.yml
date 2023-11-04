@@ -2,3 +2,7 @@ name: MLua
 version: '${version}'
 main: org.smokingplaya.mlua.MLua
 api-version: '1.16'
+commands:
+  mlua:
+    description: Description of the command
+    usage: /mlua [reload]

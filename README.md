@@ -8,7 +8,11 @@ A plugin that adds lua scripts support to Spigot.
 ## Example Script
 ```lua
 hook.insert("PlayerMoveEvent", function(event)
-  print("Player => ", event:getPlayer())
+  local player_name = event:getPlayer():getName()
+
+  fetch("POST", "http://localhost/api/users/getData", function(body, c)
+        print(body)
+  end, {token = secret_key, username = player_name, key = "played_time"}) -- post http request example
 end)
 ```
 

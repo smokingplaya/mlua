@@ -2,9 +2,10 @@
 <h2 align="center">
 MLua is a plugin for Spigot that adds the ability to write scripts for a minecraft server without having to compile them all the time.
 
+<div>
 <img src="https://img.shields.io/badge/Java Powered-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white">
-
 <img src="https://img.shields.io/badge/Lua-2C2D72?style=for-the-badge&logo=lua&logoColor=white">
+</div>
 
 [Documentation](DOCS.md)
 |

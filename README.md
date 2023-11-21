@@ -28,7 +28,6 @@ end)
 ## Build
 Build requires [gradle tool](https://gradle.org/) on your computer
 
-Default method:
 ```bash
 git clone https://github.com/smokingplaya/mlua
 cd mlua

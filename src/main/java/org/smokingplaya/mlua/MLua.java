@@ -88,6 +88,7 @@ public final class MLua extends JavaPlugin implements Listener, CommandExecutor,
 
     // commands
 
+    // TODO: Rewrite this
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (command.getName().equalsIgnoreCase("mlua")) {
@@ -121,7 +122,7 @@ public final class MLua extends JavaPlugin implements Listener, CommandExecutor,
         return completions;
     }
 
-    // http 
+    // http -> TODO:REWRITE
 
     private class FetchFunction extends VarArgFunction {
         @Override

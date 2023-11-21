@@ -312,7 +312,7 @@ public class MLuaListener implements Listener {
   public void onEntityPortal (EntityPortalEvent e) {eventHander(e);}
   @EventHandler
   public void onEntityPortalExit (EntityPortalExitEvent e) {eventHander(e);}
-  
+
   @EventHandler
   public void onEntityPoseChange (EntityPoseChangeEvent e) {eventHander(e);}
   @EventHandler

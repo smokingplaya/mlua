@@ -15,13 +15,12 @@ You can download .jar file [here](https://github.com/smokingplaya/mlua/releases/
 
 ## Example Script
 ```lua
--- post http request example
-hook.insert("PlayerQuitEvent", function(event)
+hook.insert("PlayerMoveEvent", function(event)
   local player_name = event:getPlayer():getName()
 
   fetch("POST", "http://localhost/api/users/getData", function(body, c)
         print(body)
-  end, {token = secret_key, username = player_name, key = "played_time"})
+  end, {token = secret_key, username = player_name, key = "played_time"}) -- post http request example
 end)
 ```
 
